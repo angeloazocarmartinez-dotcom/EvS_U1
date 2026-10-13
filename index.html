@@ -76,7 +76,7 @@
         let carrera = document.getElementById("Carrera").value;
 
         if (nombre && email && carrera) {
-            document.getElementById("resultado").textContent = `Registro Exitoso: ` + `Nombre: ${nombre}, Correo: ${email}, Carrera: ${carrera}`;
+            document.getElementById("resultado").textContent = `Registro Exitoso ` + nombre + "/ correo " + email + "/ carrera" + carrera + ".";
             document.getElementById("resultado").style.color = "green";
         } else {
             document.getElementById("resultado").textContent = "Por favor, completa todos los campos.";
