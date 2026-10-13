@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV.Sumativa</title>
+    <style>
+    body {
+        background-color: beige;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 60px;
+     }
+     label {
+        color: black;
+        font-size: 20px;
+     }
+     .Titulo {
+        color: white;
+        background-color: lightblue;
+        text-align: center;
+        padding: 10px;
+        margin: 50px;
+        border-radius: 10px;
+     }
+     .Instrucciones {
+        color: black;
+        background-color: lightgray;
+        text-align: left;
+        padding: 10px;
+        margin: 50px;
+        border-radius: 10px;
+     }
+     input, select, button {
+        padding: 10px;
+        font-size: 16px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+     }
+    </style>
+</head>
+<body>
+  <div class="Titulo"> 
+<h1>Evaluacion Sumativa: Registro de Datos</h1>
+<p><strong>Programacion Basica Manipulacion del DOM con JavaScript</strong></p>
+</div>  
+<div class="Instrucciones">
+    <h1>Instrucciones del Ejercicio:</h1>
+    <p>1. Ingresa tu Nombre Completo, Correo Electrónico y Carrera.</p>
+    <p>2. Haz clic en "Registrar Datos".</p>
+    <p>3. El script capturará la información y mostrará la confirmación en el recuadro inferior.</p>
+</div>
+<label>Nombre Completo:</label>
+<br>
+<input type="text" id="Nombre" placeholder="Nombre Completo">
+<br>
+<label>Correo Electronico:</label>
+<br>
+<input type="email" id="Email" placeholder="Correo Electronico">
+<br>
+<label>Carrera/Asignatura:</label>
+<br>
+<select id="Carrera">
+    <option value="">--Selecciona una opción--</option>
+    <option value="Ingenieria en Sistemas">Ingenieria en Sistemas</option>
+    <option value="Ingenieria Industrial">Ingenieria Industrial</option>
+    <option value="Ingenieria Civil">Ingenieria Civil</option>
+    <option value="Licenciatura en Informatica">Licenciatura en Informatica</option>
+</select>
+<br>
+<button onclick="registrarDatos()">Registrar Datos</button>
+<script>
+    function registrarDatos() {
+        let nombre = document.getElementById("Nombre").value;
+        let email = document.getElementById("Email").value;
+        let carrera = document.getElementById("Carrera").value;
+
+        if (nombre && email && carrera) {
+            document.getElementById("resultado").textContent = `Registro Exitoso: ` + `Nombre: ${nombre}, Correo: ${email}, Carrera: ${carrera}`;
+            document.getElementById("resultado").style.color = "green";
+        } else {
+            document.getElementById("resultado").textContent = "Por favor, completa todos los campos.";
+            document.getElementById("resultado").style.color = "red";
+        }
+
+        // Limpiar los campos después del registro
+        document.getElementById("Nombre").value = "";
+        document.getElementById("Email").value = "";
+        document.getElementById("Carrera").value = "";
+    }
+</script>
+<div id="resultado">Resultado del registro aparecerá aquí.</div>
+</body>
+</html>
